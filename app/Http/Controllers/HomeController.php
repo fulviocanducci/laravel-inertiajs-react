@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return Inertia::render('Home/index', []);
+        return Inertia::render('Home/index', ['user' => Auth::user()]);
     }
 }
